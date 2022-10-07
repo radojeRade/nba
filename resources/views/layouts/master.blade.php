@@ -26,7 +26,17 @@
    
 
     <main role="main">
-    
+    <div>
+      @if (auth()->check())
+      <p>{{ auth()->user()->name }}</p>
+          
+          <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
+          
+          @else
+          <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
+          <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a>
+          @endif
+    </div>
         <div class="album py-5 bg-muted" >
             <div class="container" style=" align-items: center">
 
