@@ -8,6 +8,10 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function create(){
         return view('auth.register');
     }
@@ -23,7 +27,7 @@ class RegisterController extends Controller
 
         $user->save();
 
-        //auth()->login($user);
+        auth()->login($user);
 
         //session()->flash('message', 'Registration is succesfull');//flash poruka
 
