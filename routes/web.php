@@ -25,6 +25,8 @@ Route::get('/players/{id}', [PlayersController::class, 'show'])->name('single-pl
 
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register/{id}', [RegisterController::class, 'update']);
+
 
 Route::get('/logout', [LoginController::class, 'destroy']);
 
