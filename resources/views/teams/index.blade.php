@@ -10,11 +10,7 @@
             <div class="card mb-4 box-shadow">
               <div class="card-body ">
               <a href="{{ route('single-team', [ 'id'=> $team->id]) }}" > {{$team->name}}</a>
-                {{-- <div class="d-flex justify-content-between align-items-center">
-
-                      <p class="card-text">{{$movie->story_line}}</p>
-                  
-                </div> --}}
+               
               </div>
             </div>
           </div>
