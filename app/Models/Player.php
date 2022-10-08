@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
+    
     protected $table = 'players';
 
     protected $fillable = ['first_name', 'last_name', 'email', 'team_id'];

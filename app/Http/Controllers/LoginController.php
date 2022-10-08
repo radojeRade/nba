@@ -21,7 +21,7 @@ class LoginController extends Controller
     }
 
     public function store(){
-        $success = auth()->attempt([    //proveravamo kredencijale usera
+        $success = auth()->attempt([    
             'email'=> request('email'),
             'password'=>request('password')
         ]);

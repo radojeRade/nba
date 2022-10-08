@@ -39,7 +39,7 @@
 
         @error('password')
         @include('partials.error')
-
         @enderror
+        
     </form>
-    @endsection
+@endsection

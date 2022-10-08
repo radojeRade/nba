@@ -14,14 +14,17 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+
     public function create(){
         return view('auth.register');
     }
+
     public function update($id){
         
         User::where('id', $id)->update(['is_verified' => true]);
         return view('auth.login');
     }
+
     public function store(CreateUserRequest $request){
 
         $validated = $request->validated();
@@ -36,11 +39,6 @@ class RegisterController extends Controller
         
             Mail::to($user)->send(new UserVerified($user));
         
-
-        //auth()->login($user);
-
-        //session()->flash('message', 'Registration is succesfull');//flash poruka
-
         return redirect('/');
 
     }

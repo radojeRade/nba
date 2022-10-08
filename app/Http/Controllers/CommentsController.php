@@ -18,9 +18,6 @@ class CommentsController extends Controller
 
         $team = Team::find($id);
         $team->addComments($request->validated()['content'], auth()->id());
-        // if($post->user){
-        //     Mail::to($post->user)->send(new CommentReceived($post));
-        // }
         
         return redirect()->back();
     }

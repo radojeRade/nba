@@ -1,7 +1,5 @@
 <div class="form-group">
-            <div class="alert alert-danger">
-
-            
-            <p>{{$message}}</p>
-            </div>
-            </div>
+    <div class="alert alert-danger">
+        <p>{{$message}}</p>
+    </div>
+</div>
