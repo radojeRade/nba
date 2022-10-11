@@ -26,7 +26,8 @@
           @endif  
             <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
             <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
-            <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a>      
+            <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a> 
+            <a class="btn btn-sm btn-outline-secondary" href="/news">News</a>      
         </div>
             <div class="album py-5 bg-muted" >
               <div class="container" style=" align-items: center">
