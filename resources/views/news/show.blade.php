@@ -7,7 +7,15 @@
       <h5 class="card-title">{{$news->title}}</h5>
       <p class="card-text">{{$news->content}}</p>
     
-      <a href="/news/{{$news->user->id}}" > {{$news->user->name}}</a>   
+      <a href="/news/{{$news->user->id}}" > {{$news->user->name}}</a> 
+      <ul>
+        @foreach($news->teams as $team)
+        <li>
+          <p>{{$team->name}}</p>
+        </li>
+          
+        @endforeach
+      </ul>  
     </div>
   </div>
 @endsection
