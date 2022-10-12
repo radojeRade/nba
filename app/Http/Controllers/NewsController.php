@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        
+    }
     public function index(Team $team){
         $news = [];
         if ($team->id) {
-            $news = $team->news()->paginate(5);
+            $news = $team->news()->orderBy('created_at', 'desc')->paginate(5); //$sorted = Model::orderBy('name')->paginate(10);
         } else {
-            $news = News::paginate(5);
+            $news = News::orderBy('created_at', 'desc')->paginate(5);
         }
          return view('news.index', compact('news'));
     }
@@ -21,6 +26,22 @@ class NewsController extends Controller
 
         return view('news.show', compact('news'));
     }
+
+    public function create(){
+        $teams = Team::all();    
+             
+        return view('news.create', compact('teams'));
+    }
+    public function store(Request $request){
+        $news = News::create([
+            'title' => $request['title'],
+            'content' => $request['content'],
+            'user_id' => auth()->id()
+        ]);
+        $news->teams()->attach($request['teams']);
+        return redirect('/news');
+    }
+    
     
     
 }

@@ -37,6 +37,9 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/teams/{id}/comments', [CommentsController::class, 'store'])->middleware('words');
 
 Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news/teams', [NewsController::class, 'create']);
+Route::post('/news', [NewsController::class, 'store']);
+
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('single-news');
 
 Route::get('/news/teams/{team}', [NewsController::class, 'index']);
