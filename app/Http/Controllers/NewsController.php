@@ -38,7 +38,10 @@ class NewsController extends Controller
             'content' => $request['content'],
             'user_id' => auth()->id()
         ]);
+
         $news->teams()->attach($request['teams']);
+        session()->flash('message', 'Thank you for publishing article on www.nba.com');//flash poruka
+
         return redirect('/news');
     }
     

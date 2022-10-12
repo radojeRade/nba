@@ -31,6 +31,12 @@
             <a class="btn btn-sm btn-outline-secondary" href="/news/teams">Create news</a>     
         </div>
             <div class="album py-5 bg-muted" >
+              @if(session('message')) 
+                  <div class="alert alert-success"> {{--flash poruka--}}
+                    {{session('message')}}
+                  </div>
+        
+      @endif
               <div class="container" style=" align-items: center">
                   
                 @yield('content')
