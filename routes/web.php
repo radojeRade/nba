@@ -38,3 +38,5 @@ Route::post('/teams/{id}/comments', [CommentsController::class, 'store'])->middl
 
 Route::get('/news', [NewsController::class, 'index']);
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('single-news');
+
+Route::get('/news/teams/{team}', [NewsController::class, 'index']);

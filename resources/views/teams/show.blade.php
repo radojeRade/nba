@@ -9,13 +9,15 @@
       <h5 class="card-title">{{$team->name}}</h5>
       <p class="card-text">{{$team->email}}</p>
       <p>{{$team->address}}</p>
-      <p class="card-text">{{$team->city}}</p> 
+      <p class="card-text">{{$team->city}}</p>
+      <a href="/news/teams/{{$team->id}}" >Ruta ka vestima o timu</a> 
       <div>
         <h4>Players:</h4>
         <ul>
           @foreach($team->players as $player)
             <li>         
-              <a href="{{ route('single-player', ['id' => $player->id]) }}" > {{ $player->first_name}} {{$player->last_name }}</a>      
+              <a href="{{ route('single-player', ['id' => $player->id]) }}" > {{ $player->first_name}} {{$player->last_name }}</a>
+                    
             </li>
           @endforeach
         </ul>        
