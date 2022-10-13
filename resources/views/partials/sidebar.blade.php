@@ -13,12 +13,13 @@ transition: all 0.3s;">
 
     <ul class="text-light">
         <p>Teams</p>
-        
-        @foreach($teamsWithNews as $teamNews)
-        <li>
-            <a class="text-light" href="/news/teams/{{$teamNews->id}}">{{ $teamNews->name }} </a>
-        </li>
-        @endforeach
+        @if (auth()->check())
+            @foreach($teamsWithNews as $teamNews)
+            <li>
+                <a class="text-light" href="/news/teams/{{$teamNews->id}}">{{ $teamNews->name }} </a>
+            </li>
+            @endforeach
+        @endif
     </ul>
 
 </nav>

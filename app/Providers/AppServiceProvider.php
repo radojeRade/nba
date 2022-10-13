@@ -23,13 +23,7 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        // view()->composer('partials.activeusers', function ($view) {
-        //     $view->with('activeusers', User::activeusers());
-        // });
-
-        //$teamsWithNews = Team::has('news')->get();
-        
+    {   
         view()->composer('partials.sidebar', function($view){
             $view->with('teamsWithNews', Team::has('news')->get());
         });
