@@ -31,4 +31,6 @@ class Team extends Model
             'user_id' => $id,  
         ]);
     }
+
+
 }
